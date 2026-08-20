@@ -60,13 +60,14 @@
 
     <p class="lede">
       VocaNum works without a VocaNum account. Learning data is stored locally
-      on your device, Pro can optionally synchronize learning data through your
-      private iCloud database, and VocaNum collects limited first-party
-      analytics to understand how the app is used and improve the product.
+      on your device, optional private iCloud synchronization is available
+      without a Pro purchase when Apple iCloud services are available, and
+      VocaNum collects limited first-party analytics to understand how the app
+      is used and improve the product.
     </p>
 
     <p class="updated">
-      <strong>Last updated:</strong> August 17, 2026
+      <strong>Last updated:</strong> August 21, 2026
     </p>
 
     <aside class="notice" aria-label="Privacy summary">
@@ -77,7 +78,8 @@
         interaction, and purchase-event analytics using a randomly generated
         installation identifier. We do not require a VocaNum account and do not
         collect your name, email address, phone number, payment card details, or
-        advertising identifier through normal app use.
+        advertising identifier through normal app use. Private iCloud sync is
+        separate from Pro membership and is user-initiated in the app.
       </p>
     </aside>
 
@@ -113,7 +115,7 @@
 
         <li>
           Vocabulary progress, confidence, known or forgotten status, review
-          timing, scores, and practice-session summaries.
+          timing, scores, achievements, and practice-session summaries.
         </li>
       </ul>
 
@@ -131,14 +133,21 @@
     </section>
 
     <section>
-      <h2>3. Optional Pro private iCloud sync</h2>
+      <h2>3. Optional private iCloud synchronization</h2>
 
       <p>
-        VocaNum Pro includes optional backup and synchronization through Apple
-        CloudKit. If you have Pro and enable
-        <strong>Profile → Backup &amp; Sync</strong>, VocaNum may synchronize
-        the following information through the private CloudKit database
-        belonging to your iCloud account:
+        VocaNum includes optional synchronization through Apple CloudKit. This
+        synchronization is not restricted to Pro members. In the current app,
+        the user starts synchronization from
+        <strong>Settings → iCloud Sync</strong> by using actions such as
+        <strong>Sync Now</strong> or <strong>Restore from iCloud</strong> when
+        iCloud is available.
+      </p>
+
+      <p>
+        When you start a sync, VocaNum may synchronize supported learning data
+        through the private CloudKit database associated with your iCloud
+        account. This may include:
       </p>
 
       <ul>
@@ -149,23 +158,25 @@
         </li>
 
         <li>
-          Answer records, score events, and practice-session summaries.
+          Answer records, score events, and practice-session information
+          supported by the current synchronization format.
         </li>
       </ul>
 
       <p>
-        Private iCloud sync is separate from VocaNum's analytics system.
-        Learning records synchronized through CloudKit are stored in your
-        private CloudKit database rather than VocaNum's analytics server.
-        Apple states that private CloudKit database records are, by default,
-        accessible only to the user and are not visible to the application
-        developer through the developer portal.
+        Private iCloud synchronization is separate from VocaNum's analytics
+        system and separate from whether you have purchased Pro. Learning
+        records synchronized through CloudKit are stored through Apple’s private
+        CloudKit database services for your iCloud account rather than in
+        VocaNum's first-party analytics database.
       </p>
 
       <p>
-        Sync requires an available iCloud account and can be disabled at any
-        time. If iCloud is unavailable, VocaNum continues to support local
-        learning.
+        Sync requires an available iCloud account and Apple CloudKit services.
+        If iCloud is unavailable, restricted, interrupted, or simply not used,
+        VocaNum continues to support local learning. The current app does not
+        require continuous synchronization; synchronization begins when you
+        choose one of the available sync actions.
       </p>
     </section>
 
@@ -321,6 +332,12 @@
         product or plan involved and whether a purchase or restore operation
         succeeded, failed, was cancelled, or remained pending.
       </p>
+
+      <p>
+        Purchasing Pro changes access to Pro-labeled premium learning features;
+        it is not required to use the private iCloud synchronization flow
+        described in Section 3.
+      </p>
     </section>
 
     <section>
@@ -348,18 +365,18 @@
 
       <p>
         Local learning data remains on your device until it is deleted or reset.
-        In VocaNum, open <strong>Profile → Learning Data</strong> to access the
-        available local-data controls, which may include exporting data,
-        resetting progress, resetting question history, or deleting local
+        In VocaNum, open <strong>Profile → Settings → Learning Data</strong> to
+        access the available local-data controls, which include exporting data,
+        resetting progress, resetting question history, and deleting local
         learning data.
       </p>
 
       <p>
-        When private iCloud sync is enabled, local deletions may be represented
-        by deletion records and synchronized through CloudKit so that another
-        device does not restore an older copy. Keep sync enabled until the
-        relevant synchronization completes if you want the deletion to
-        propagate to your other devices.
+        If you use private iCloud synchronization, local deletions may be
+        represented in the synchronization data so that another device does not
+        restore an older copy. If you want a local deletion reflected across
+        devices, run a successful synchronization after the deletion before
+        relying on another device’s stored copy.
       </p>
 
       <p>
@@ -417,8 +434,8 @@
 
       <p>
         Learning records that are not transmitted as analytics remain on the
-        device unless private iCloud sync is enabled. Private sync uses Apple's
-        CloudKit infrastructure.
+        device unless you choose to synchronize supported records through
+        Apple’s private CloudKit services.
       </p>
 
       <p>
